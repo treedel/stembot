@@ -33,7 +33,7 @@ def generate_launch_description():
 
     declare_world_name = DeclareLaunchArgument(
         name='world_name',
-        default_value='shapes.sdf',
+        default_value='empty.sdf',
         description='Name of the demo world to load'
     )
 
