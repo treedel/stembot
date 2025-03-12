@@ -92,7 +92,6 @@ def generate_launch_description():
         description='yaw angle of initial orientation, radians'
     )
 
-    world = 'shapes.sdf'
     package_tb3_description = FindPackageShare(package='tb3_description').find('tb3_description')
     robot_description = IncludeLaunchDescription(
         PythonLaunchDescriptionSource(
