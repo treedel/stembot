@@ -6,6 +6,7 @@ An example robot that demonstrates the capabilities of the ROS2 ecosystem.
 2. Clone the repository:
    ```bash
    git clone https://github.com/treedel/stembot.git
+   cd stembot
    ```
 3. Build the packages using:
    ```bash
@@ -45,7 +46,7 @@ There are two approaches for this experiment: using a prebuilt node or creating 
   ```bash
   ros2 launch stembot_gazebo gazebo.launch.py
   ```
-- Run the `two_point_looper` node:
+- Run the `two_point_looper` node in another terminal after sourcing:
   ```bash
   ros2 run stembot_state_manipulator two_point_looper
   ```
@@ -60,7 +61,8 @@ There are two approaches for this experiment: using a prebuilt node or creating 
    cd src/<package_name>/<package_name>
    ```
    Here, you'll find a `__init__.py` file. Create a new Python script for your node in this folder.
-3. Open `setup.py` (located in `src/<package_name>`) and add an entry point for the node under `console_scripts`:
+3. Open `setup.py` (located in `src/<package_name>`) and add an entry point for the node under `console_scripts` as
+   `'<node_name> = <package_name>.<python_file_name>:main'`. It should look similar to this:
    ```python
    entry_points={
        'console_scripts': [
@@ -88,8 +90,9 @@ There are two approaches for this experiment: using a prebuilt node or creating 
 ### Experiment 5: SLAM and Mapping
 1. Launch the Gazebo simulator with EKF odometry:
    ```bash
-   ros2 launch stembot_gazebo gazebo.launch.py use_ekf_odom:=true
+   ros2 launch stembot_gazebo gazebo.launch.py use_ekf_odom:=true world_name:=shapes.sdf
    ```
+   The `world_name` is a parameter that accepts demo world names from gazebo (ex: shapes.sdf, empty.sdf, etc)
 2. Launch the SLAM nodes for mapping:
    ```bash
    ros2 launch stembot_mapping toolbox_oma.launch.py use_sim_time:=true
