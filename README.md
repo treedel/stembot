@@ -1,7 +1,7 @@
 # Stembot
 An example robot that demonstrates the capabilities of the ROS2 ecosystem.
 
-## Installation Instructions
+## Package installation Instructions
 1. Open a terminal and navigate to a directory of your choice using `ls` and `cd` commands.
 2. Clone the repository:
    ```bash
@@ -20,7 +20,7 @@ An example robot that demonstrates the capabilities of the ROS2 ecosystem.
 
 ## Package Instructions
 
-### Experiment 1: Basic Robot Control
+### Experiment 1: Robot teleoperation
 - Launch the Gazebo simulator:
   ```bash
   ros2 launch stembot_gazebo gazebo.launch.py
@@ -32,13 +32,13 @@ An example robot that demonstrates the capabilities of the ROS2 ecosystem.
   ```
   This node publishes velocity commands (`cmd_vel`) based on keyboard inputs.
 
-### Experiment 2: EKF-Based Odometry
+### Experiment 2: Robot_Localization Based Odometry
 - Launch the Gazebo simulator with EKF odometry enabled:
   ```bash
   ros2 launch stembot_gazebo gazebo.launch.py use_ekf_odom:=true
   ```
 
-### Experiment 3: Two-Point Looper
+### Experiment 3: Robot state manipulation using nodes
 There are two approaches for this experiment: using a prebuilt node or creating your own.
 
 #### Option 1: Using the Prebuilt Node
@@ -79,7 +79,7 @@ There are two approaches for this experiment: using a prebuilt node or creating 
 
 **Note:** You can find reference code in the `code` folder or the `src` package files.
 
-### Experiment 4: Obstacle Avoidance
+### Experiment 4: Obstacle Avoidance using 2D Lidar
 - Use the prebuilt `obstacle_avoider` node:
   ```bash
   ros2 run stembot_obstacle_avoidance obstacle_avoider
@@ -87,7 +87,7 @@ There are two approaches for this experiment: using a prebuilt node or creating 
 - Alternatively, create your own package and implement the obstacle avoidance logic in a custom node.
 - Don't forget to launch the simulator before running the node.
 
-### Experiment 5: SLAM and Mapping
+### Experiment 5: Performing SLAM and Mapping
 1. Launch the Gazebo simulator with EKF odometry:
    ```bash
    ros2 launch stembot_gazebo gazebo.launch.py use_ekf_odom:=true world_name:=shapes.sdf
