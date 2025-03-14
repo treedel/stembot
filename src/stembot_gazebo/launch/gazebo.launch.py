@@ -27,7 +27,7 @@ def generate_launch_description():
 
     declare_use_ekf_odom = DeclareLaunchArgument(
         name='use_ekf_odom',
-        default_value='true',
+        default_value='false',
         description='Whether to start ekf filter for odometry'
     )
 
