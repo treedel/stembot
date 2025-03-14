@@ -13,8 +13,8 @@
   direction: GZ_TO_ROS
 
 # Differential drive topics
-- ros_topic_name: "cmd_vel_out"
-  gz_topic_name: "cmd_vel_out"
+- ros_topic_name: "cmd_vel"
+  gz_topic_name: "cmd_vel"
   ros_type_name: "geometry_msgs/msg/Twist"
   gz_type_name: "gz.msgs.Twist"
   direction: ROS_TO_GZ

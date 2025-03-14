@@ -46,7 +46,7 @@
 
             <max_linear_accleration>0.1</max_linear_accleration>
 
-            <topic>cmd_vel_out</topic>
+            <topic>cmd_vel</topic>
             <tf_topic>robot/tf</tf_topic>
             <odom_topic>robot/odom</odom_topic>
             
